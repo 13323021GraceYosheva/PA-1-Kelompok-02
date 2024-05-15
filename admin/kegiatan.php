@@ -59,11 +59,15 @@
                                                     </td>
 
                                                     <td>
-                                                        <a href="#" data-toggle="modal" data-target="#modalUpdateKegiatan-<?= $r['id_kegiatan'] ?>" class="btn btn-warning btn-sm" id="btn-edit"><i
+                                                        <a href="#" data-toggle="modal"
+                                                            data-target="#modalUpdateKegiatan-<?= $r['id_kegiatan'] ?>"
+                                                            class="btn btn-warning btn-sm" id="btn-edit"><i
                                                                 class="fas fa-edit"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-sm a-confirm">
+                                                        <a href="../include/Events/admin/KegiatanEvents.php?act=delete&id=<?= $r['id_kegiatan'] ?>"
+                                                            class="btn btn-danger btn-sm a-confirm">
                                                             <i class="fas fa-trash"></i></a>
-                                                        <div class="modal fade" id="modalUpdateKegiatan-<?= $r['id_kegiatan'] ?>">
+                                                        <div class="modal fade"
+                                                            id="modalUpdateKegiatan-<?= $r['id_kegiatan'] ?>">
                                                             <div class="modal-dialog modal-lg">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -73,14 +77,20 @@
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="" method="post" enctype="multipart/form-data">
+                                                                    <form
+                                                                        action="../include/Events/admin/KegiatanEvents.php?act=update&id=<?= $r['id_kegiatan'] ?>"
+                                                                        method="post" enctype="multipart/form-data">
                                                                         <div class="modal-body">
                                                                             <div class="form-group">
+                                                                                <img src="<?= $r['foto_kegiatan'] != '-' && $r['foto_kegiatan'] != null ? '../uploads/' . $r['foto_kegiatan'] : '../assets/img/user.png' ?>"
+                                                                                    alt="View Img" class="img view_img_update"
+                                                                                    width="100">
+                                                                                <br>
                                                                                 <label for="foto_kegiatan">Foto</label>
                                                                                 <input type="file" name="foto_kegiatan"
                                                                                     id="foto_kegiatan"
                                                                                     placeholder="Foto Kegiatan"
-                                                                                    class="form-control">
+                                                                                    class="form-control foto_update">
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="judul_kegiatan">Judul
@@ -146,12 +156,16 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="../include/Events/admin/KegiatanEvents.php?act=store" method="post"
+                        enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="form-group">
+                                <img src="<?= '../assets/img/user.png' ?>"
+                                    alt="View Img" class="img view_img_add" width="100">
+                                <br>
                                 <label for="foto_kegiatan">Foto</label>
                                 <input type="file" name="foto_kegiatan" id="foto_kegiatan" placeholder="Foto Kegiatan"
-                                    class="form-control">
+                                    class="form-control foto_add">
                             </div>
                             <div class="form-group">
                                 <label for="judul_kegiatan">Judul Kegiatan</label>
