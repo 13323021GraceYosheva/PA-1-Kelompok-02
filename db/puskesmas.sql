@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2024 at 06:18 PM
+-- Generation Time: Apr 30, 2024 at 03:25 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -85,13 +85,6 @@ CREATE TABLE `kategori_layanan` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `kategori_layanan`
---
-
-INSERT INTO `kategori_layanan` (`id_kategori_layanan`, `kategori_layanan`, `status_kategori_layanan`, `created_at`, `updated_at`) VALUES
-(1, 'Poliklinik', '0', '2024-04-26 06:30:06', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -105,13 +98,6 @@ CREATE TABLE `kategori_ukp` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `kategori_ukp`
---
-
-INSERT INTO `kategori_ukp` (`id_kategori_ukp`, `kategori_ukp`, `status_kategori_ukp`, `created_at`, `updated_at`) VALUES
-(1, 'Rawat Jalan', '0', '2024-04-26 06:26:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -129,13 +115,6 @@ CREATE TABLE `kegiatan` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `kegiatan`
---
-
-INSERT INTO `kegiatan` (`id_kegiatan`, `foto_kegiatan`, `judul_kegiatan`, `slug_kegiatan`, `short_desc_kegiatan`, `desc_kegiatan`, `created_at`, `update_at`) VALUES
-(1, '-', 'Lorem Ipsum sit dolor met', 'lorem-ipsum-sit-dolor-met', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '2024-04-26 06:03:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -234,6 +213,12 @@ INSERT INTO `users` (`id_users`, `img_user`, `first_name`, `last_name`, `email`,
 --
 
 --
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id_artikel`);
+
+--
 -- Indexes for table `dokter`
 --
 ALTER TABLE `dokter`
@@ -292,40 +277,46 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jadwal_dokter`
 --
 ALTER TABLE `jadwal_dokter`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategori_layanan`
 --
 ALTER TABLE `kategori_layanan`
-  MODIFY `id_kategori_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kategori_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategori_ukp`
 --
 ALTER TABLE `kategori_ukp`
-  MODIFY `id_kategori_ukp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kategori_ukp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `setting_web`
@@ -337,13 +328,13 @@ ALTER TABLE `setting_web`
 -- AUTO_INCREMENT for table `ukp`
 --
 ALTER TABLE `ukp`
-  MODIFY `id_ukp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ukp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
