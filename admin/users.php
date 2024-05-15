@@ -69,7 +69,7 @@
                                                             data-target="#modalUpdate-<?= $r['id_users'] ?>"
                                                             class="btn btn-warning btn-sm" id="btn-edit"><i
                                                                 class="fas fa-edit"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-sm a-confirm">
+                                                        <a href="../include/Events/admin/UsersEvents.php?act=delete&id=<?= $r['id_users'] ?>" class="btn btn-danger btn-sm a-confirm">
                                                             <i class="fas fa-trash"></i></a>
                                                         <div class="modal fade" id="modalUpdate-<?= $r['id_users'] ?>">
                                                             <div class="modal-dialog modal-lg">
@@ -81,7 +81,7 @@
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="" method="post" enctype="multipart/form-data">
+                                                                    <form action="../include/Events/admin/UsersEvents.php?act=update&id=<?= $r['id_users'] ?>" method="post" enctype="multipart/form-data">
                                                                         <div class="modal-body">
                                                                             <div class="row">
                                                                                 <div class="col-md-6">
@@ -121,7 +121,7 @@
                                                                         <div class="modal-footer justify-content-between">
                                                                             <button type="button" class="btn btn-default btn-sm"
                                                                                 data-dismiss="modal">Close</button>
-                                                                            <button type="button"
+                                                                            <button type="submit"
                                                                                 class="btn btn-success btn-sm">Save
                                                                                 changes</button>
                                                                         </div>

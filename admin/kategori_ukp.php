@@ -64,7 +64,7 @@
                                                             data-target="#modalUpdateKategori-<?= $r['id_kategori_ukp'] ?>"
                                                             class="btn btn-warning btn-sm" id="btn-edit"><i
                                                                 class="fas fa-edit"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-sm a-confirm">
+                                                        <a href="../include/Events/admin/KategoriUKP.php?act=delete&id=<?= $r['id_kategori_ukp'] ?>" class="btn btn-danger btn-sm a-confirm">
                                                             <i class="fas fa-trash"></i></a>
                                                         <div class="modal fade" id="modalUpdateKategori-<?= $r['id_kategori_ukp'] ?>">
                                                             <div class="modal-dialog modal-lg">
@@ -76,7 +76,7 @@
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-                                                                    <form action="" method="post" enctype="multipart/form-data">
+                                                                    <form action="../include/Events/admin/KategoriUKP.php?act=update&id=<?= $r['id_kategori_ukp'] ?>" method="post" enctype="multipart/form-data">
                                                                         <div class="modal-body">
                                                                             <div class="form-group">
                                                                                 <label for="kategori_ukp">Nama Kategori</label>
@@ -133,7 +133,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="../include/Events/admin/KategoriUKP.php?act=store" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="kategori_ukp">Nama Kategori</label>
