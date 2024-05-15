@@ -26,6 +26,8 @@
                         <div class="card-header">
                             <div class="card-title">Data Artikel</div>
                             <div class="card-tools">
+                                <a href="#" data-toggle="modal" data-target="#modalTambahArtikel"
+                                    class="btn btn-success btn-sm"><i class="fas fa-plus"></i>Tambah</a>
                             </div>
 
                         </div>
