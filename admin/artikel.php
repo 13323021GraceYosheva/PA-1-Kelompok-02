@@ -21,6 +21,18 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+            <div class="col-md-12">
+                    <?php
+                    if (isset($_SESSION['flash_data'])) {
+                        ?>
+                        <div
+                            class="alert alert-<?= isset($_SESSION['flash_data']['status']) ? $_SESSION['flash_data']['status'] : '' ?>">
+                            <?= isset($_SESSION['flash_data']['message']) ? $_SESSION['flash_data']['message'] : '' ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
                 <div class="col-md-12">
                     <div class="card card-success card-outline">
                         <div class="card-header">
@@ -110,7 +122,7 @@
                                                                             <div class="form-group">
                                                                                 <label for="desc_artikel">Artikel</label>
                                                                                 <textarea name="desc_artikel" id="desc_artikel"
-                                                                                    placeholder="Artikel" class="form-control"
+                                                                                    placeholder="Artikel" class="form-control summernote"
                                                                                     cols="30" rows="10"><?= $r['desc_artikel'] ?></textarea>
                                                                             </div>
                                                                         </div>
@@ -173,7 +185,7 @@
                             <div class="form-group">
                                 <label for="desc_artikel">Artikel</label>
                                 <textarea name="desc_artikel" id="desc_artikel" placeholder="Artikel"
-                                    class="form-control" cols="30" rows="10"></textarea>
+                                    class="form-control summernote" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-between">

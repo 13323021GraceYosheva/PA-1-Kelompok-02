@@ -7,7 +7,7 @@ $username = 'root';
 $password = '';
 $database = 'puskesmas';
 
-$koneksi = mysqli_connect($host,$username,$password,$database) or die();
+$koneksi = mysqli_connect($host,$username,$password,$database, '3308') or die();
 
 function BaseUrl(){
     $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
