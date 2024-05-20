@@ -9,7 +9,7 @@ if (isset($_GET['act'])) {
         $data_insert = [
             'img_user' => $foto,
             'first_name' => $_POST['first_name'],
-            'last_name' => getSlug($_POST['last_name']),
+            'last_name' => $_POST['last_name'],
             'email' => $_POST['email'],
             'username' => $_POST['username'],
             'password' => md5($_POST['password']),
@@ -28,7 +28,7 @@ if (isset($_GET['act'])) {
         $oldData = getDataAsConditions($koneksi, 'users', "id_users = " . $id);
         $data_update = [
             'first_name' => $_POST['first_name'],
-            'last_name' => getSlug($_POST['last_name']),
+            'last_name' => $_POST['last_name'],
             'email' => $_POST['email'],
             'username' => $_POST['username'],
             'password' => isset($_POST['password']) && $_POST['password'] != null ? md5($_POST['password']) : $oldData['password'],

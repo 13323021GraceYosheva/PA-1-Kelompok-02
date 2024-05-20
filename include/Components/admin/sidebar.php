@@ -13,7 +13,7 @@
                 <img src="<?= $_SESSION['foto_user'] != '-' && $_SESSION['foto_user'] != null ? '../uploads/'.$_SESSION['foto_user'] : '../assets/img/user.png'  ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="profile.php" class="d-block"><?= $_SESSION['nama_user'] != null ? $_SESSION['nama_user'] : 'Anonymous' ?></a>
+                <a href="profile.php" class="d-block"><?= $_SESSION['nama_user']  ?></a>
             </div>
         </div>
 

@@ -50,6 +50,17 @@ function DeleteData($koneksi,$table,$conditions){
     return $result;
 }
 
+function getPuskesmasSettings($koneksi){
+    $data = getAll($koneksi,"setting_puskesmas");
+    $result = null;
+    if($data != null){
+        $result = [];
+        while($r = mysqli_fetch_array($data)){
+            $result[$r['nama_setting']] = $r['value'] != null && $r['value'] != "" ? $r['value'] : $r['default_value'];
+        }
+    }
+    return $result;
+}
 
 function getDataAsConditions($koneksi,$table,$conditions,$select = "*"){
     $query = mysqli_query($koneksi,"SELECT $select FROM $table WHERE $conditions;");

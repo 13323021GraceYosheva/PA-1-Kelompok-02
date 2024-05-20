@@ -4,6 +4,10 @@
 <!-- Bootstrap -->
 <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
+
+<!-- Summernote -->
+<script src="../assets/plugins/summernote/summernote-bs4.js"></script>
+<!-- DataTables -->
 <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -19,6 +23,7 @@
 <script src="../assets/js/sweetalert.js"></script>
 <script>
 $(document).ready(function () {
+  $('.summernote').summernote()
     $('.table').DataTable();
     $('.table1').DataTable();
   })

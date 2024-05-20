@@ -1,4 +1,5 @@
 <?php include './include/Database/DBConnections.php'?>
+<?php include './include/Helper/DbHelper.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
