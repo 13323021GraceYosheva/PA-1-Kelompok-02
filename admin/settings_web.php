@@ -21,7 +21,18 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                
+            <div class="col-md-12">
+                    <?php
+                    if (isset($_SESSION['flash_data'])) {
+                        ?>
+                        <div
+                            class="alert alert-<?= isset($_SESSION['flash_data']['status']) ? $_SESSION['flash_data']['status'] : '' ?>">
+                            <?= isset($_SESSION['flash_data']['message']) ? $_SESSION['flash_data']['message'] : '' ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </section>
